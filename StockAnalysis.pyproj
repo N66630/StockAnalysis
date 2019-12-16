@@ -1,0 +1,60 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>81c89057-107a-41ac-b939-19f15d89bc0d</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>StockAnalysis.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>StockAnalysis</Name>
+    <RootNamespace>StockAnalysis</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DB.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="hyRoot\Common.py" />
+    <Compile Include="hyRoot\IO\Config.py" />
+    <Compile Include="hyRoot\IO\File.py" />
+    <Compile Include="hyRoot\IO\Log.py" />
+    <Compile Include="hyRoot\IO\__init__.py" />
+    <Compile Include="Crawl.py" />
+    <Compile Include="hyRoot\MSSQL.py" />
+    <Compile Include="hyRoot\Network\__init__.py" />
+    <Compile Include="hyRoot\__init__.py" />
+    <Compile Include="StockAnalysis.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="hyRoot\" />
+    <Folder Include="hyRoot\IO\" />
+    <Folder Include="hyRoot\Network\" />
+    <Folder Include="hyRoot\Network\__pycache__\" />
+    <Folder Include="hyRoot\__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.ini" />
+    <Content Include="hyRoot\Network\__pycache__\Crawl.cpython-36.pyc" />
+    <Content Include="hyRoot\Network\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="hyRoot\__pycache__\__init__.cpython-36.pyc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
